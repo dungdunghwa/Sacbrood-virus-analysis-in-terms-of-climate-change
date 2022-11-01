@@ -9,7 +9,7 @@ Descriptive analysis of relationship between Sacbrood virus and Climate change
 5. penalized logistic regression
 
 ## 1. flow chart
-![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
+[flowchart(en)_clear.pdf](https://github.com/dungdunghwa/Sacbrood-virus-analysis-in-terms-of-climate-change/files/9907944/flowchart.en._clear.pdf)
 
 ## 2. Crawling
 I used Google Colab for crawling Virus infection history. Packages and initial settings are different from desktop.
