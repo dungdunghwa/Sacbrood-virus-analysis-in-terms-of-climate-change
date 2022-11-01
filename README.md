@@ -36,7 +36,8 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
 
 
 ## 3. dynamic time wrapping
-ㅇㅆ
+To classify regions by unique ecosystems(to track the flow of occurence of virus in each region and classify regions as having a same ecosystem if they have similiar occurence flow), dynamic time wrapping was used.
 ### packages
  import dtaidistance as dt
+### example
 
