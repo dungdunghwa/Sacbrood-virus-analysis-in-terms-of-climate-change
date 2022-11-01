@@ -2,11 +2,12 @@
 Descriptive analysis of relationship between Sacbrood virus and Climate change
 
 ## Content
-1. flow chart
-2. crawling
-3. blockwise stochastic regression imputation
-4. dynamic time wrapping
-5. penalized logistic regression
+#### 1. flow chart
+#### 2. crawling
+#### 3. blockwise stochastic regression imputation
+#### 4. dynamic time wrapping
+#### 5. weighted mean dvector 
+#### 5. penalized logistic regression
 
 ## 1. flow chart
 ![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
@@ -28,7 +29,7 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
   import pandas as pd
   
   
- ## 2. Blockwise stochastic regression imputation
+ ## 3. Blockwise stochastic regression imputation
  Since all predictor variables are time series data, it might not be appropriate to apply stochastic regression imputation directly. There would be too much loss of information. Therefore I create a blockwise stochastic regression imputation function via Python.
  ![imputation (en)](https://user-images.githubusercontent.com/108067353/199185234-976d1ee1-f67f-4211-8fd2-9aa7fcec8e3c.png)
  
@@ -37,11 +38,30 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
 ![impute1](https://user-images.githubusercontent.com/108067353/199185499-ecf04d07-0aa8-4646-8863-acd952f032ee.png) ![impute2](https://user-images.githubusercontent.com/108067353/199185503-3110a8bb-b534-47aa-b16c-1718ed87270b.png)
 
 
-## 3. dynamic time wrapping
+## 4. dynamic time wrapping(dtw)
 To classify regions by unique ecosystems(to track the flow of occurence of virus in each region and classify regions as having a same ecosystem if they have similiar occurence flow), dynamic time wrapping was used.
 ### packages
 
  import dtaidistance as dt
  
 ### example
+Here are wrapping loss plots that shows a part of dtw function. As you can see, regions that are close to each other(adjacent) have relatively small wrappig loss. This means they are truly under same ecosystem.
+
 ![dtw1](https://user-images.githubusercontent.com/108067353/199188097-c3403908-746e-4136-b929-e41117d71985.png)
+
+This is final map of regional classification.
+
+![regions(en)](https://user-images.githubusercontent.com/108067353/199189048-a57643e9-c604-45ae-a587-b77a08af8068.png)
+
+## 5. weighted mean vector generation
+Since bee's life span is 30-60 days, and it is shown that bees average death rate drastically increase between 12-14 days, I converted each predictor vector to 2-weeks weighted mean vector. 
+
+
+## 5. penalized logisitic regression
+
+### packages
+
+  require(glmnet)
+  require(pscl)
+ 
+ 
