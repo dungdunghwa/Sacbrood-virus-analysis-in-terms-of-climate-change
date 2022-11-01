@@ -1,7 +1,7 @@
 # Sacbrood-virus-analysis-in-terms-of-climate-change
 Descriptive analysis of relationship between Sacbrood virus and Climate change
 
-##Content
+## Content
 1. flow chart
 2. crawling
 3. blockwise stochastic regression imputation
@@ -11,9 +11,8 @@ Descriptive analysis of relationship between Sacbrood virus and Climate change
 ## 1. flow chart
 ![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
 
-
-## 2. Crawling by Google Colab
-I used Google Colab since my laptop condition was bad. 
+## 2. Crawling
+I used Google Colab for crawling Virus infection history. Packages and initial settings are different from desktop.
 ### Packages
   from os import close
   import time
@@ -28,4 +27,6 @@ I used Google Colab since my laptop condition was bad.
   import pandas as pd
  
  ## 2. Blockwise stochastic regression imputation
+ Since all predictor variables are time series data, it might not be appropriate to apply stochastic regression imputation directly. There would be too much loss of information. Therefore I create a blockwise stochastic regression imputation function via Python.
  
+ Since response variable(Sacbrrod virus occurence from 2017.09.22~2022.10.15) is tim
