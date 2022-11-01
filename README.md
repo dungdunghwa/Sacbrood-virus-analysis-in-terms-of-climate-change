@@ -15,7 +15,7 @@ Descriptive analysis of relationship between Sacbrood virus and Climate change
 ## 2. Crawling
 I used Google Colab for crawling Virus infection history. Packages and initial settings are different from desktop.
 ### Packages
-
+'''
   from os import close
   import time
   from selenium import webdriver
@@ -27,7 +27,7 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
   from selenium.webdriver.support import expected_conditions as EC
   import numpy as np
   import pandas as pd
-  
+''' 
   
  ## 3. Blockwise stochastic regression imputation
  Since all predictor variables are time series data, it might not be appropriate to apply stochastic regression imputation directly. There would be too much loss of information. Therefore I create a blockwise stochastic regression imputation function via Python.
