@@ -2,12 +2,12 @@
 Descriptive analysis of relationship between Sacbrood virus and Climate change
 
 ## Content
-  1. flow chart
-  2. crawling
-  3. blockwise stochastic regression imputation
-  4. dynamic time wrapping
-  5. weighted mean dvector 
-  6. penalized logistic regression
+> 1. flow chart
+> 2. crawling
+> 3. blockwise stochastic regression imputation
+> 4. dynamic time wrapping
+> 5. weighted mean dvector 
+> 6. penalized logistic regression
 
 ## 1. flow chart
 ![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
@@ -79,4 +79,6 @@ there are 17 predictor variables in total. I deployed penalized logisitic regres
   require(pscl)
 
 
+  import pandas
+ 
  
