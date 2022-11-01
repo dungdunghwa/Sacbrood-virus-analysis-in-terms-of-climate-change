@@ -2,12 +2,12 @@
 Descriptive analysis of relationship between Sacbrood virus and Climate change
 
 ## Content
-#### 1. flow chart
-#### 2. crawling
-#### 3. blockwise stochastic regression imputation
-#### 4. dynamic time wrapping
-#### 5. weighted mean dvector 
-#### 5. penalized logistic regression
+  1. flow chart
+  2. crawling
+  3. blockwise stochastic regression imputation
+  4. dynamic time wrapping
+  5. weighted mean dvector 
+  6. penalized logistic regression
 
 ## 1. flow chart
 ![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
@@ -39,10 +39,20 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
 
 
 ## 4. dynamic time wrapping(dtw)
-To classify regions by unique ecosystems(to track the flow of occurence of virus in each region and classify regions as having a same ecosystem if they have similiar occurence flow), dynamic time wrapping was used.
+To classify regions by unique ecosystems(to track the flow of occurence of virus in each region and classify regions as having a same ecosystem if they have similiar occurence flow), dynamic time wrapping was deployed. 95% t-test was used in classification as well.
 ### packages
 
  import dtaidistance as dt
+ 
+### t-test 
+ def dtw_function(df, z=1.645):
+        ...
+        lowerCI=np.mean(loss)-z*np.std(loss)/len(loss)**(1/2)
+        box=[]
+        for idx in np.where(np.array(loss)<lowerCI)[0]:
+            box.append(loc[idx])
+        ...
+
  
 ### example
 Here are wrapping loss plots that shows a part of dtw function. As you can see, regions that are close to each other(adjacent) have relatively small wrappig loss. This means they are truly under same ecosystem.
@@ -56,12 +66,16 @@ This is final map of regional classification.
 ## 5. weighted mean vector generation
 Since bee's life span is 30-60 days, and it is shown that bees average death rate drastically increase between 12-14 days, I converted each predictor vector to 2-weeks weighted mean vector. 
 
+![웨이트민](https://user-images.githubusercontent.com/108067353/199191229-dbce6fbd-48ab-41dd-9ab3-0572f5fefe4c.png)
 
-## 5. penalized logisitic regression
+
+## 6. penalized logisitic regression
+there are 17 predictor variables in total. I deployed penalized logisitic regression(lasso and adaptive lasso) and also compared them with simple logistic regression.
 
 ### packages
 
   require(glmnet)
   require(pscl)
- 
+
+
  
