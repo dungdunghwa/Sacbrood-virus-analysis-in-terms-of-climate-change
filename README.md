@@ -44,4 +44,4 @@ To classify regions by unique ecosystems(to track the flow of occurence of virus
  import dtaidistance as dt
  
 ### example
-![dtw1](https://user-images.githubusercontent.com/108067353/199188097-c3403908-746e-4136-b929-e41117d71985.png) ![dtw2](https://user-images.githubusercontent.com/108067353/199188102-b4da5e72-2696-48c6-a7e9-e7a9f74afbd7.png)
+![dtw1](https://user-images.githubusercontent.com/108067353/199188097-c3403908-746e-4136-b929-e41117d71985.png)
