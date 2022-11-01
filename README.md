@@ -2,12 +2,12 @@
 Descriptive analysis of relationship between Sacbrood virus and Climate change
 
 ## Content
-> 1. flow chart
-> 2. crawling
-> 3. blockwise stochastic regression imputation
-> 4. dynamic time wrapping
-> 5. weighted mean dvector 
-> 6. penalized logistic regression
+1. [flow chart](#1.-flow-chart)
+2. [crawling](#2.-Crawling)
+3. [blockwise stochastic regression imputation](#3.-Blockwise-stochastic-regression-imputation)
+4. [dynamic time wrapping](#4.-dynamic-time-wrapping(dtw))
+5. [weighted mean dvector](#5.-weighted-mean-vector-generation)
+6. [penalized logistic regression](#6.-penalized-logisitic-regression)
 
 ## 1. flow chart
 ![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
@@ -16,7 +16,7 @@ Descriptive analysis of relationship between Sacbrood virus and Climate change
 I used Google Colab for crawling Virus infection history. Packages and initial settings are different from desktop.
 
 ### Packages
-
+```
    from os import close
    import time
    from selenium import webdriver
@@ -28,7 +28,7 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
    from selenium.webdriver.support import expected_conditions as EC
    import numpy as np
    import pandas as pd
-
+```
   
  ## 3. Blockwise stochastic regression imputation
  Since all predictor variables are time series data, it might not be appropriate to apply stochastic regression imputation directly. There would be too much loss of information. Therefore I create a blockwise stochastic regression imputation function via Python.
@@ -42,10 +42,11 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
 ## 4. dynamic time wrapping(dtw)
 To classify regions by unique ecosystems(to track the flow of occurence of virus in each region and classify regions as having a same ecosystem if they have similiar occurence flow), dynamic time wrapping was deployed. 95% t-test was used in classification as well.
 ### packages
-
+```
  import dtaidistance as dt
- 
+``` 
 ### t-test 
+```
  def dtw_function(df, z=1.645):
         ...
         lowerCI=np.mean(loss)-z*np.std(loss)/len(loss)**(1/2)
@@ -53,7 +54,7 @@ To classify regions by unique ecosystems(to track the flow of occurence of virus
         for idx in np.where(np.array(loss)<lowerCI)[0]:
             box.append(loc[idx])
         ...
-
+```
  
 ### example
 Here are wrapping loss plots that shows a part of dtw function. As you can see, regions that are close to each other(adjacent) have relatively small wrappig loss. This means they are truly under same ecosystem.
@@ -74,11 +75,7 @@ Since bee's life span is 30-60 days, and it is shown that bees average death rat
 there are 17 predictor variables in total. I deployed penalized logisitic regression(lasso and adaptive lasso) and also compared them with simple logistic regression.
 
 ### packages
-
+```
   require(glmnet)
   require(pscl)
-
-'''
-  import pandas
-'''
- 
+```
