@@ -28,5 +28,8 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
  
  ## 2. Blockwise stochastic regression imputation
  Since all predictor variables are time series data, it might not be appropriate to apply stochastic regression imputation directly. There would be too much loss of information. Therefore I create a blockwise stochastic regression imputation function via Python.
+ ![imputation (en)](https://user-images.githubusercontent.com/108067353/199185234-976d1ee1-f67f-4211-8fd2-9aa7fcec8e3c.png)
+ 
+ This is how it works:
  
  Since response variable(Sacbrrod virus occurence from 2017.09.22~2022.10.15) is tim
