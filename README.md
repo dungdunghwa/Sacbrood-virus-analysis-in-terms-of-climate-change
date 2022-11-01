@@ -9,6 +9,7 @@ Descriptive analysis of relationship between Sacbrood virus and Climate change
 5. penalized logistic regression
 
 ## 1. flow chart
+![flow chart (en)](https://user-images.githubusercontent.com/108067353/199183520-ccee3593-e6d9-4286-a958-d7044f40ec85.png)
 
 
 ## 2. Crawling by Google Colab
