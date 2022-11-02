@@ -31,6 +31,7 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
 ```
   
  ## 3. Blockwise stochastic regression imputation
+ file name: weather_gen.ipynb
  Since all predictor variables are time series data, it might not be appropriate to apply stochastic regression imputation directly. There would be too much loss of information. Therefore I create a blockwise stochastic regression imputation function via Python.
  ![imputation (en)](https://user-images.githubusercontent.com/108067353/199185234-976d1ee1-f67f-4211-8fd2-9aa7fcec8e3c.png)
  
@@ -40,6 +41,7 @@ I used Google Colab for crawling Virus infection history. Packages and initial s
 
 
 ## 4. dynamic time wrapping(dtw)
+file name: weather_gen.ipynb
 To classify regions by unique ecosystems(to track the flow of occurence of virus in each region and classify regions as having a same ecosystem if they have similiar occurence flow), dynamic time wrapping was deployed. 95% t-test was used in classification as well.
 ### packages
 ```
@@ -66,12 +68,14 @@ This is final map of regional classification.
 ![regions(en)](https://user-images.githubusercontent.com/108067353/199189048-a57643e9-c604-45ae-a587-b77a08af8068.png)
 
 ## 5. weighted mean vector generation
+file name:final_dataset_gen.ipynb
 Since bee's life span is 30-60 days, and it is shown that bees average death rate drastically increase between 12-14 days, I converted each predictor vector to 2-weeks weighted mean vector. 
 
 ![웨이트민](https://user-images.githubusercontent.com/108067353/199191229-dbce6fbd-48ab-41dd-9ab3-0572f5fefe4c.png)
 
 
 ## 6. penalized logisitic regression
+file name:reg.[region alphabet].R
 there are 17 predictor variables in total. I deployed penalized logisitic regression(lasso and adaptive lasso) and also compared them with simple logistic regression.
 
 ### packages
